@@ -1,7 +1,6 @@
 # UWFlow-Plus
 >A Firefox extension which adds UWFlow information to ugradcalendar.uwaterloo.ca pages.<hr>
 
-![Screenshot of hover and right click functionality](/res/screenshot.png)
 ##Table of Contents
 * [Functions](#functions)
 * [Installation](#installation)
