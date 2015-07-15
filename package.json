@@ -1,0 +1,21 @@
+{
+    "license": "MIT", 
+    "description": "A Firefox extension which adds UWFlow information to the undergradutate UW pages ", 
+    "engines": {
+        "firefox": ">=38.0a1", 
+        "fennec": ">=38.0a1"
+    }, 
+    "author": "Alex Tomala", 
+    "title": "UWFlow Plus", 
+    "version": "0.1.0", 
+    "main": "index.js", 
+    "id": "uwflow-plus@atomala", 
+    "name": "uwflow-plus",
+    "cross-domain-content":{
+      "permissions":{
+        "cross-domain-content": [
+          "https://uwflow.com/"
+        ]
+      }
+    }
+}
