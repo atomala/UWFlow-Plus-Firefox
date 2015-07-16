@@ -43,6 +43,7 @@ function mouseOver(){
 
 function mouseOut(){
 	$('#frame').css('display','none');
+	$('#frame > table').css('display', 'none');
 	if ($.active > 0)
 			courseObj.abort(); // Terminates any ongoing AJAX request 
 }
