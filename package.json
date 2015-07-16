@@ -11,11 +11,9 @@
     "main": "index.js", 
     "id": "uwflow-plus@atomala", 
     "name": "uwflow-plus",
-    "cross-domain-content":{
-      "permissions":{
-        "cross-domain-content": [
-          "https://uwflow.com/"
-        ]
-      }
+    "permissions":{
+      "cross-domain-content": [
+        "https://uwflow.com/"
+      ]
     }
 }

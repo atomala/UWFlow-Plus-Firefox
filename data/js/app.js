@@ -4,7 +4,7 @@ $('body').append('<div class=\"loading\"></div>');
 var courseObjs = []; // Keeps track of courses to avoid repeated ajax calls
 var courseObj = {}; // Current AJAX request
 
-$('body').html($('body').html().replace(/\b[A-Z]{2,}\s*[0-9]{1,3}\b(?!.[0-9])(?=[^>]*(<|$))/g, "<span class=\"flow-link\">$&</span>"));
+$('body').html($('body').html().replace(/\b[A-Z]{2,}\s*[0-9]{1,3}L?\b(?!.[0-9])(?=[^>]*(<|$))/g, "<span class=\"flow-link\">$&</span>"));
 
 $('body > .loading').remove();
 
@@ -34,6 +34,8 @@ function mouseOver(){
 			courseObjs.push(flowInfo);
 			loadContent(courseCode);
 		});
+
+		courseObj.error(errorContent);
 	} else {
 		loadContent(courseCode);
 	}
@@ -62,6 +64,16 @@ function loadContent(courseCode){ // Loads information into hovering frame
 	$('#easy-bar').css('width',(data.ratings[1].rating*100)+'%');
 	$('#easy').html(Math.round(data.ratings[1].rating*100)+'%');
 	$('#overall').html(Math.round(data.overall.rating*100)+'%');
+	$('#frame > table').css('display', 'block');
+}
+
+function errorContent(error){
+	$('#frame').removeClass('loading');
+	$('#frame').addClass('info');
+	$('#code').html("Error");
+	$('#course-name').html("Data can't be loaded");
+	$('#description').html(error);
+	$('#frame > table').css('display', 'none');
 }
 
 function reloadStylesheets() {
